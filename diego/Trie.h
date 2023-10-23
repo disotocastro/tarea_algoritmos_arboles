@@ -24,13 +24,14 @@ public:
     Trie();
 
     int i2c(char c);
-    void insertWord(std::string& trieString);
-    bool searchWord(std::string& trieString);
-    bool deleteWord(std::string& trieString);
-    void printTrie(std::shared_ptr<TrieNode> node, std::string word);
+    void insert_word(std::string& trieString);
+    bool search_word(std::string& trieString);
+    bool delete_word(std::string& trieString);
+    void print_trie(std::shared_ptr<TrieNode> node, std::string word);
 private:
     bool Partdelete(std::string& trieString, std::shared_ptr<TrieNode>& checkout);
     bool isEmptyNode(std::shared_ptr<TrieNode> check) const;
 };
+
 
 #endif

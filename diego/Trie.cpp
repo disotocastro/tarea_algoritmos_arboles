@@ -17,7 +17,7 @@ int Trie::i2c(char c) {
     return static_cast<int>(c - 'a');
 }
 
-void Trie::insertWord(string& trieString) {
+void Trie::insert_word(string& trieString) {
     shared_ptr<TrieNode> current = root;
     for (int i = 0; i < trieString.size(); i++) {
         if (current->children[i2c(trieString[i])] == shared_ptr<TrieNode>(nullptr)) {
@@ -28,7 +28,7 @@ void Trie::insertWord(string& trieString) {
     current->isWord = true;
 }
 
-bool Trie::searchWord(string& trieString) {
+bool Trie::search_word(string& trieString) {
     shared_ptr<TrieNode> current = root;
     for (int i = 0; i < trieString.size(); i++) {
         if (current->children[i2c(trieString[i])] == shared_ptr<TrieNode>(nullptr)) {
@@ -68,7 +68,7 @@ bool Trie::Partdelete(string& trieString, shared_ptr<TrieNode>& checkout) {
     return false;
 }
 
-bool Trie::deleteWord(string& trieString) {
+bool Trie::delete_word(string& trieString) {
     if (Partdelete(trieString, root)) {
         return true;
     }
@@ -84,7 +84,7 @@ bool Trie::isEmptyNode(shared_ptr<TrieNode> check) const {
     return true;
 }
 
-void Trie::printTrie(std::shared_ptr<TrieNode> node, std::string word) {
+void Trie::print_trie(std::shared_ptr<TrieNode> node, std::string word) {
     if (node == nullptr) {
         return;
     }
@@ -95,7 +95,7 @@ void Trie::printTrie(std::shared_ptr<TrieNode> node, std::string word) {
 
     for (int i = 0; i < ALPHABET_SIZE; i++) {
         if (node->children[i] != nullptr) {
-            printTrie(node->children[i], word + static_cast<char>('a' + i));
+            print_trie(node->children[i], word + static_cast<char>('a' + i));
         }
     }
 }
