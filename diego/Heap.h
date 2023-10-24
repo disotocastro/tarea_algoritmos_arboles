@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 
-
 using std::string, std::cout, std::vector, std::endl;
 
 class Heap{
@@ -9,8 +8,8 @@ private:
     int size{};
     vector<int>vect = {-1}; // Valor random
     int parent(int i);
-    int left_child(int i);
-    int right_child(int i);
+    int left_child(int i) const;
+    int right_child(int i) const;
 
 public:
     bool is_empty() const;
@@ -19,6 +18,13 @@ public:
     void shift_down(int i);
     void shift_up(int i);
     int extract_max();
+    void print_heap(int i, int depth) const;
+    // void print_heap_array() const;
+    void print_heap_array() const;
+    
+
+    
+
 };
 
 

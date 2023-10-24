@@ -30,19 +30,26 @@ int main() {
     Heap* myHeap = new Heap();
     if (myHeap->is_empty())
     {
-        std::cout << "Esta vacio" << std::endl;
+        std::cout << "Corrent anwser" << std::endl;
     }else{
         std::cout << "No funciona" << std::endl;
     }
 
     myHeap->insert_item(10);
     myHeap->insert_item(120);
-    myHeap->insert_item(6);
-    myHeap->insert_item(45);
+    myHeap->insert_item(1000);
+    myHeap->insert_item(130);
+    myHeap->insert_item(110);
+    myHeap->insert_item(40);
     myHeap->insert_item(34);
     myHeap->insert_item(41);
-    std::cout << myHeap->get_Max() << "/* Maximo */" << std::endl;
-    myHeap->extract_max();
-    std::cout << myHeap->get_Max() << "/* Maximo */" << std::endl;
+    myHeap->insert_item(5);
+
+    myHeap->print_heap_array();
+
     return 0;
 }
+
+
+
+//g++ -o main main.cpp Trie.cpp Heap.cpp
